@@ -1,4 +1,4 @@
-# Urban AI Scientist
+# AI Urban Scientist
 <p align="center">
   <img src="img1.png" alt="描述" width="90%" />
 </p>
