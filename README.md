@@ -11,6 +11,8 @@ Urban AI Scientist is an end-to-end automated research pipeline designed forthe 
 
 > 💬 [中文文档 →](./README_zh.md)
 
+*New 2026.07.17* **AI-Urban-Sci Skill v1.0 is now officially released!** This release integrates the full capabilities of our platform and is fully compatible with leading development tools including Claude Code, Codex, and Qoder, thereby empowering scientific research workflows. We are committed to ongoing updates and long-term maintenance to ensure sustained performance and feature enhancements.
+
 ---
 
 ## Authors
