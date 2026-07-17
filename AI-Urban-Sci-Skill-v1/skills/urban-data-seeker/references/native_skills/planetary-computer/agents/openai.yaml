@@ -1,7 +1,0 @@
-interface:
-  display_name: "Microsoft Planetary Computer"
-  short_description: "Planetary Computer STAC assets"
-  default_prompt: "Use $planetary-computer to find and probe STAC assets for my bbox and dates."
-
-policy:
-  allow_implicit_invocation: true

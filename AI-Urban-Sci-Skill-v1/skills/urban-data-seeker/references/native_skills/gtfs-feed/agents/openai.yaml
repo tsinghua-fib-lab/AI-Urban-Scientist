@@ -1,7 +1,0 @@
-interface:
-  display_name: "GTFS Schedule Feeds"
-  short_description: "GTFS transit schedule feed discovery"
-  default_prompt: "Use $gtfs-feed to find and validate the GTFS schedule feed for my transit agency."
-
-policy:
-  allow_implicit_invocation: true

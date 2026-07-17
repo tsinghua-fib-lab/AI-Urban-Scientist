@@ -1,7 +1,0 @@
-interface:
-  display_name: "GBFS Bikeshare Feeds"
-  short_description: "GBFS bikeshare station and vehicle feeds"
-  default_prompt: "Use $gbfs-bikeshare to find a GBFS feed and verify station availability fields."
-
-policy:
-  allow_implicit_invocation: true

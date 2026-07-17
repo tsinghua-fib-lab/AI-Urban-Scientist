@@ -1,7 +1,0 @@
-interface:
-  display_name: "ArcGIS Platform"
-  short_description: "Use ArcGIS REST and Hub mechanics"
-  default_prompt: "Use $arcgis-platform to route this urban data need to the right source or platform and list validation checks."
-
-policy:
-  allow_implicit_invocation: true

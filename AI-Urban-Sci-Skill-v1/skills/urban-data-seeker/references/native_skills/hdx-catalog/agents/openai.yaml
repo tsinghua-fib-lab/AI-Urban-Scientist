@@ -1,7 +1,0 @@
-interface:
-  display_name: "Humanitarian Data Exchange"
-  short_description: "HDX humanitarian datasets and resources"
-  default_prompt: "Use $hdx-catalog to find and validate HDX resources for my humanitarian data need."
-
-policy:
-  allow_implicit_invocation: true

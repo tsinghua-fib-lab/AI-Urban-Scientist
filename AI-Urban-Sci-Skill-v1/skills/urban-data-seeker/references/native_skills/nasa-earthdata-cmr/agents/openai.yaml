@@ -1,7 +1,0 @@
-interface:
-  display_name: "NASA Earthdata CMR"
-  short_description: "NASA Earthdata collections and granules"
-  default_prompt: "Use $nasa-earthdata-cmr to search NASA CMR collections and verify granules."
-
-policy:
-  allow_implicit_invocation: true
