@@ -1,0 +1,31 @@
+{
+  "platform_package_id": "socrata_platform",
+  "package_type": "platform_tool",
+  "source_card_id": "socrata_open_data_portals",
+  "migration_wave": "known_source_platform_tool_wave",
+  "migration_status": "migrated_from_legacy_known_source",
+  "source_prior_only": true,
+  "finality": "not_final",
+  "consumer_authority": "none",
+  "direct_resource_default_policy": "defer_to_resolver_probe_download_verifier",
+  "legacy_known_source_layers": [
+    "nyc_open_data_parks_properties",
+    "chicago_traffic_crashes",
+    "nyc_311_service_requests",
+    "chicago_crimes",
+    "nyc_dob_permit_issuance",
+    "nyc_dob_job_application_filings",
+    "chicago_building_permits",
+    "nyc_ems_dispatch"
+  ],
+  "platform_usage_notes": [
+    "Use Socrata URL parsing, catalog search, and rows export mechanics only as platform hints.",
+    "A Socrata view id can identify a portal dataset page, but it cannot decide whether the dataset satisfies a research need.",
+    "Legacy known_source candidates remain compatibility source priors until a route-agent consumer reads neutral platform fragments."
+  ],
+  "future_verification_hints": [
+    "Resolve the landing page or view id into a current portal dataset record.",
+    "Probe candidate export endpoints before any downstream acquisition step.",
+    "Validate rows, fields, geography, time coverage, and portal metadata outside this platform package."
+  ]
+}
