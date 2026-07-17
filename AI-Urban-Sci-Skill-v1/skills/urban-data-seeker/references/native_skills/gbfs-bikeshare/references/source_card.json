@@ -1,0 +1,40 @@
+{
+  "source_id": "gbfs_bikeshare_feeds",
+  "source_skill_id": "gbfs_bikeshare",
+  "access_status": "open",
+  "api_status": "public_api",
+  "authorization_required": false,
+  "not_open_download": false,
+  "title": "GBFS Bikeshare Feeds",
+  "source_family": "mobility_realtime_feeds",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "official_entrypoints": [
+    {
+      "label": "GBFS specification",
+      "url": "https://github.com/MobilityData/gbfs",
+      "publisher": "MobilityData"
+    },
+    {
+      "label": "GBFS systems catalog",
+      "url": "https://github.com/MobilityData/gbfs/blob/master/systems.csv",
+      "publisher": "MobilityData"
+    }
+  ],
+  "supported_inputs": {
+    "system_name": "Bikeshare system name",
+    "region": "City, region, or market",
+    "feed_url": "Optional GBFS discovery URL"
+  },
+  "verification_hints": [
+    "GBFS discovery JSON and version must be validated downstream.",
+    "Endpoint freshness and system identity must be checked before use.",
+    "Real-time feeds are not automatically suitable for historical trip analysis."
+  ],
+  "access_notes": [
+    "GBFS is an open data standard for public shared-mobility availability feeds.",
+    "Concrete system feeds still require discovery URL, version, freshness, and schema validation."
+  ],
+  "migration_note": "Bikeshare source priors should migrate from known URLs into GBFS SourceCard metadata and feed-inspection scripts."
+}

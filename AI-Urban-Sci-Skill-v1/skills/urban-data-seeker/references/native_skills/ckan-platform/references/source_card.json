@@ -1,0 +1,15 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use CKAN catalog mechanics for package search, package metadata, organizations, groups, tags, and resource files. Use when a selected portal exposes CKAN APIs or resource metadata, including government, humanitarian, institutional, and city catalogs, after source suitability has been narrowed.",
+  "platform_fingerprints": [
+    "CKAN",
+    "package_search",
+    "package_show",
+    "/api/3/action/",
+    "resource metadata"
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "ckan-platform",
+  "skill_type": "platform"
+}

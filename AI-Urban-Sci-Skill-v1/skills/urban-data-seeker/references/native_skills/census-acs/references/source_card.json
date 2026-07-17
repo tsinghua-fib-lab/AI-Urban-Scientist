@@ -1,0 +1,58 @@
+{
+  "source_id": "us_census_acs",
+  "source_skill_id": "census_acs",
+  "access_status": "open",
+  "api_status": "public_api",
+  "authorization_required": false,
+  "not_open_download": false,
+  "title": "U.S. Census American Community Survey",
+  "source_family": "acs_demographic_tables",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "official_entrypoints": [
+    {
+      "label": "Census Data API",
+      "url": "https://api.census.gov/data.html",
+      "publisher": "U.S. Census Bureau"
+    },
+    {
+      "label": "ACS program page",
+      "url": "https://www.census.gov/programs-surveys/acs",
+      "publisher": "U.S. Census Bureau"
+    }
+  ],
+  "supported_inputs": {
+    "year": "ACS vintage year",
+    "survey": "ACS survey such as acs5 or acs1",
+    "geography": "Geographic summary level such as tract or block group",
+    "variables": "ACS variable ids or table ids"
+  },
+  "verification_hints": [
+    "Variable ids, geography predicates, and year availability must be validated downstream.",
+    "Census API dataset URLs are source-prior leads, not final evidence.",
+    "Boundary files and attributes must remain separate unless the consuming route explicitly needs both.",
+    "Do not use this card as benchmark-case answer data."
+  ],
+  "migration_wave": "known_source_wave1",
+  "migration_status": "migrated_from_legacy_known_source",
+  "legacy_known_source_layers": ["us_census_acs5_tracts"],
+  "applies_if": {
+    "need_terms": ["ACS", "American Community Survey", "demographics", "socioeconomic", "tract"],
+    "source_layers": ["us_census_acs5_tracts"]
+  },
+  "excludes_if": {
+    "need_terms": ["employment origin-destination flows", "weather station", "air quality monitor"],
+    "geography": ["outside United States"]
+  },
+  "access_notes": [
+    "Census Data API datasets are public; an API key can improve quota handling but is not required for basic bounded requests.",
+    "Legacy ACS known_source entries remain source-prior compatibility hints.",
+    "ACS attributes and TIGER boundaries are separate verification concerns."
+  ],
+  "future_verification_hints": [
+    "Confirm variables, survey, vintage, predicates, geography level, and boundary joins.",
+    "Route-agent consumers must run resolver/probe/download/verifier separately."
+  ],
+  "migration_note": "Legacy ACS known-source entries should migrate to SourceCard metadata and scripts that expose variable/geography/year ambiguity."
+}

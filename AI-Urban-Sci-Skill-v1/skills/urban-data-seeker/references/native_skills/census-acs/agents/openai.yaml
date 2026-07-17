@@ -1,0 +1,7 @@
+interface:
+  display_name: "U.S. Census American Community Survey"
+  short_description: "ACS tables, variables, geographies, and margins"
+  default_prompt: "Use $census-acs to find ACS variables and verify a Census API query for my geography."
+
+policy:
+  allow_implicit_invocation: true

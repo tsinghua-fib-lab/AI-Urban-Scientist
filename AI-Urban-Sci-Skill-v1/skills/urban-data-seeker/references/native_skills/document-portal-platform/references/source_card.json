@@ -1,0 +1,15 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use official HTML/PDF document portal mechanics for planning pages, report landing pages, comprehensive plans, zoning documents, environmental reports, and policy repositories. Use when the selected evidence source is document-backed rather than an API table and official status or version must be verified.",
+  "platform_fingerprints": [
+    "official PDF",
+    "planning document",
+    "comprehensive plan",
+    "zoning report",
+    "environmental report"
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "document-portal-platform",
+  "skill_type": "platform"
+}

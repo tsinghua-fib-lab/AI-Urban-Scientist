@@ -1,0 +1,61 @@
+{
+  "schema": "open_data_source_card.v1",
+  "source_id": "microsoft_global_ml_building_footprints",
+  "source_skill_id": "microsoft_building_footprints",
+  "display_name": "Microsoft Global ML Building Footprints",
+  "publisher": "Microsoft",
+  "source_family": "microsoft_global_ml_building_footprints",
+  "supported_domains": [
+    "buildings",
+    "geospatial"
+  ],
+  "scope": "global",
+  "category": "buildings/geospatial",
+  "platform_role": "geospatial_data_infrastructure",
+  "source_type": "building_footprint_data",
+  "api_status": "partial_programmatic_access",
+  "access_status": "open",
+  "landing_url": "https://github.com/microsoft/GlobalMLBuildingFootprints",
+  "documentation_url": "https://github.com/microsoft/GlobalMLBuildingFootprints",
+  "api_base_url": "",
+  "access_method": "source_card_hint",
+  "required_params": [
+    "query"
+  ],
+  "authorization_required": false,
+  "authorization_param": "authorization",
+  "not_open_download": false,
+  "platform_tools_used": [],
+  "default_executability_hint": "source_landing",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "needs_follow_up": true,
+  "follow_up_reason": "metadata_validation_required",
+  "route_description": "Microsoft global ML building-footprint file-index leads.",
+  "positive_evidence": "Need matched Microsoft Global ML Building Footprints source family or catalog scope.",
+  "ambiguities": [
+    "Dataset identity, exact variable/product/file, geography, and time coverage require downstream validation.",
+    "Access terms and license must be checked before acquisition."
+  ],
+  "requestability_conditions": [
+    "Use only under downstream policy and source terms.",
+    "Do not fetch full data from this SourceSkill output alone."
+  ],
+  "validation_notes": [
+    "Confirm the source landing page, documentation, and publisher before downstream acquisition.",
+    "Validate requested geography, time range, variables, license, access limits, and provenance.",
+    "Keep this output as source-prior evidence only; downstream resolver, probe, acquisition, and verifier stages remain required.",
+    "Does not validate country shard coverage, freshness, or geometry quality as final."
+  ],
+  "api_query_template": {
+    "url": "https://github.com/microsoft/GlobalMLBuildingFootprints",
+    "query_params": {
+      "query": "{query}",
+      "geography": "{geography}",
+      "time_range": "{time_range}"
+    }
+  },
+  "probe_method": "METADATA_ONLY",
+  "probe_notes": "Probe official metadata or documentation first; do not acquire data from this source-prior hint alone."
+}

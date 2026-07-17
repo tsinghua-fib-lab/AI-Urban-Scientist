@@ -1,0 +1,90 @@
+{
+  "consumer_authority": "none",
+  "current_scripts": [
+    "check_data_gov_catalog_access.py",
+    "fetch_data_gov_catalog_sample.py",
+    "find_data_gov_catalog.py",
+    "probe_data_gov_catalog_api.py",
+    "validate_data_gov_catalog_result.py"
+  ],
+  "current_tool_types": [
+    "find",
+    "access_check",
+    "probe",
+    "fetch_sample",
+    "download_link",
+    "download",
+    "validate"
+  ],
+  "download_contract": {
+    "artifact_contract": {
+      "capped": "false for full fetch; true for sample fetch",
+      "download_mode": "sample or full",
+      "path": "local output artifact path",
+      "size_bytes": "written artifact size"
+    },
+    "default_behavior": "return_candidate_download_links_only",
+    "full_fetch": {
+      "download_mode": "full",
+      "policy_required": "fetch_full_allowed",
+      "scope": "complete_resource_when_source_access_and_terms_allow"
+    },
+    "sample_fetch": {
+      "download_mode": "sample",
+      "policy_required": "fetch_sample_allowed",
+      "scope": "capped_by_max_bytes_or_max_records"
+    },
+    "standard_args": [
+      "--policy",
+      "--url",
+      "--output-dir",
+      "--max-bytes",
+      "--max-records",
+      "--fixture-file",
+      "--fixture-response"
+    ]
+  },
+  "finality": "not_final",
+  "no_go": [
+    "Do not approve URLs, create resource plans, claim downloads, or claim verifier success.",
+    "Do not run full fetch from SourceSkill output alone."
+  ],
+  "policy": {
+    "default": "discovery_only",
+    "download": "fetch_full_allowed_requires_explicit_downstream_authorization",
+    "download_link": "discovery_only",
+    "fetch_full": "fetch_full_allowed_requires_explicit_downstream_authorization",
+    "fetch_sample": "fetch_sample_allowed",
+    "probe": "probe_allowed",
+    "validate": "validate_allowed"
+  },
+  "recommended_tools": [
+    {
+      "can_write_data": false,
+      "consumer_authority": "none",
+      "finality": "not_final",
+      "output_status": "not_final_platform_hint",
+      "policy_required": "discovery_only",
+      "rationale": "reuse ckan_platform for generic protocol mechanics",
+      "script": "reuse_platform_tool",
+      "tool_type": "platform_mechanics"
+    }
+  ],
+  "review_status": {
+    "notes": "Initial capability plan generated from source_card metadata and current scripts; web review should confirm endpoint details before new live tools are implemented.",
+    "official_docs_checked": [],
+    "web_reviewed": false
+  },
+  "schema": "open_data_source_skill_tool_capabilities.v1",
+  "source_access": {
+    "access_status": "open",
+    "api_status": "public_api",
+    "authorization_required": false,
+    "not_open_download": false,
+    "platform_tools_used": [
+      "ckan_platform"
+    ]
+  },
+  "source_card_id": "data_gov_ckan_catalog",
+  "source_skill_id": "data_gov_catalog"
+}
