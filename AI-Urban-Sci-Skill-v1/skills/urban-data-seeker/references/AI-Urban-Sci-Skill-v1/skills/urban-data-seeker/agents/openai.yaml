@@ -1,6 +1,0 @@
-interface:
-  display_name: "Urban Data Seeker"
-  short_description: "Route and validate urban data sources"
-  default_prompt: "Use $urban-data-seeker to find, route, probe, and validate authoritative urban dataset sources."
-policy:
-  allow_implicit_invocation: true

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Paper Planner"
-  short_description: "Build balanced research paper execution plans"
-  default_prompt: "Create a balanced paper plan from this research idea or article."
