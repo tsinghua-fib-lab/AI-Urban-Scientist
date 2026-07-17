@@ -1,0 +1,7 @@
+interface:
+  display_name: "Microsoft Global ML Building Footprints"
+  short_description: "Microsoft ML building footprint files"
+  default_prompt: "Use $microsoft-building-footprints to find and sample building footprint files for my region."
+
+policy:
+  allow_implicit_invocation: true

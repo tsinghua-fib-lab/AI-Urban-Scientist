@@ -1,0 +1,56 @@
+{
+  "source_id": "us_tiger_boundaries",
+  "source_skill_id": "us_tiger_boundaries",
+  "access_status": "open",
+  "api_status": "bulk_download_only",
+  "authorization_required": false,
+  "not_open_download": false,
+  "title": "U.S. Census TIGER/Line Boundaries",
+  "source_family": "official_boundary_geometry",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "official_entrypoints": [
+    {
+      "label": "TIGER/Line shapefiles",
+      "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html",
+      "publisher": "U.S. Census Bureau"
+    },
+    {
+      "label": "Cartographic boundary files",
+      "url": "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html",
+      "publisher": "U.S. Census Bureau"
+    }
+  ],
+  "supported_inputs": {
+    "vintage": "TIGER/Line vintage year",
+    "geography": "Boundary geography level",
+    "state": "Optional state FIPS or postal hint"
+  },
+  "verification_hints": [
+    "Vintage, geography level, state scope, geometry type, CRS, and join keys must be validated downstream.",
+    "Boundary geometry is separate from attribute source priors.",
+    "Landing pages and constructed path hints are not final evidence."
+  ],
+  "migration_wave": "known_source_wave1",
+  "migration_status": "migrated_from_legacy_known_source",
+  "legacy_known_source_layers": ["us_census_acs5_tracts"],
+  "applies_if": {
+    "need_terms": ["TIGER", "tract boundaries", "block group boundaries", "GEOID", "Census boundary"],
+    "source_layers": ["us_census_acs5_tracts"]
+  },
+  "excludes_if": {
+    "need_terms": ["ACS variables only", "employment flows", "weather observations", "air quality observations"],
+    "geography": ["outside United States"]
+  },
+  "access_notes": [
+    "Census publishes TIGER/Line shapefiles through public web-interface and FTP archive download paths.",
+    "The ACS legacy known_source layer bundled boundary hints; this SourceCard is the boundary-side migration destination.",
+    "Boundary geometry must not be treated as demographic attribute coverage."
+  ],
+  "future_verification_hints": [
+    "Confirm vintage, geography level, state scope, geometry type, CRS, and GEOID joins.",
+    "Route-agent consumers must run resolver/probe/download/verifier separately."
+  ],
+  "migration_note": "Boundary hardcodes should migrate to SourceCard metadata and scripts that expose vintage/geography/boundary ambiguity."
+}

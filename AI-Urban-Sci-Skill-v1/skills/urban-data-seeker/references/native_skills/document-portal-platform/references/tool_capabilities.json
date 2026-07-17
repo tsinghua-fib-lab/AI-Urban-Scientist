@@ -1,0 +1,19 @@
+{
+  "current_tool_types": [
+    "candidate_routing",
+    "metadata_probe_planning",
+    "validation_planning"
+  ],
+  "download_contract": {
+    "default_behavior": "return_candidate_sources_or_platform_actions_only",
+    "full_download": "delegate_to_concrete_source_skill_after_validation"
+  },
+  "schema": "native_meta_skill.tool_capabilities.v1",
+  "skill_id": "document-portal-platform",
+  "skill_type": "platform",
+  "supports": {
+    "direct_bulk_download": false,
+    "platform_mechanics": true,
+    "source_selection": false
+  }
+}

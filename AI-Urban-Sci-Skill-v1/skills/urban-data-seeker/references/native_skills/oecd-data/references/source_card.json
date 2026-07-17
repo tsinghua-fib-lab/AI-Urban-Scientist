@@ -1,0 +1,64 @@
+{
+  "schema": "open_data_source_card.v1",
+  "source_id": "oecd_data_explorer_sdmx",
+  "source_skill_id": "oecd_data",
+  "display_name": "OECD Data Explorer",
+  "publisher": "OECD",
+  "source_family": "oecd_data_explorer_sdmx",
+  "supported_domains": [
+    "global indicators",
+    "economy"
+  ],
+  "scope": "OECD/global",
+  "category": "global indicators/economy",
+  "platform_role": "official_statistics_portal",
+  "source_type": "official_global_indicator",
+  "api_status": "public_api",
+  "access_status": "open",
+  "landing_url": "https://www.oecd.org/en/data.html",
+  "documentation_url": "https://www.oecd.org/en/data/insights/data-explainers/2024/09/api.html",
+  "api_base_url": "https://sdmx.oecd.org/public/rest/v1",
+  "access_method": "sdmx_api_source_hint",
+  "required_params": [
+    "query",
+    "geography"
+  ],
+  "authorization_required": false,
+  "authorization_param": "authorization",
+  "not_open_download": false,
+  "platform_tools_used": [
+    "sdmx_platform"
+  ],
+  "default_executability_hint": "resolvable_resource",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "needs_follow_up": false,
+  "follow_up_reason": "metadata_validation_required",
+  "route_description": "OECD indicator, regional, labor, education, economy, and metropolitan statistics leads through OECD SDMX APIs.",
+  "positive_evidence": "Need matched OECD Data Explorer source family or catalog scope.",
+  "ambiguities": [
+    "Dataset identity, exact variable/product/file, geography, and time coverage require downstream validation.",
+    "Access terms and license must be checked before acquisition."
+  ],
+  "requestability_conditions": [
+    "Use only under downstream policy and source terms.",
+    "Do not fetch full data from this SourceSkill output alone."
+  ],
+  "validation_notes": [
+    "Confirm the source landing page, documentation, and publisher before downstream acquisition.",
+    "Validate requested geography, time range, variables, license, access limits, and provenance.",
+    "Keep this output as source-prior evidence only; downstream resolver, probe, acquisition, and verifier stages remain required.",
+    "Does not resolve SDMX dataflow dimensions or codelists as final."
+  ],
+  "api_query_template": {
+    "url": "https://sdmx.oecd.org/public/rest/v1",
+    "query_params": {
+      "query": "{query}",
+      "geography": "{geography}",
+      "time_range": "{time_range}"
+    }
+  },
+  "probe_method": "METADATA_ONLY",
+  "probe_notes": "Probe official metadata or documentation first; do not acquire data from this source-prior hint alone."
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "NYC TLC Trip Record Data"
+  short_description: "NYC taxi, FHV, fare, and trip records"
+  default_prompt: "Use $nyc-tlc to find and validate NYC TLC monthly trip files for my study period."
+
+policy:
+  allow_implicit_invocation: true

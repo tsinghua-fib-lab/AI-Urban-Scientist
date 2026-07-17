@@ -1,0 +1,7 @@
+interface:
+  display_name: "NOAA Weather and Climate Data"
+  short_description: "NOAA stations, observations, and climate data"
+  default_prompt: "Use $noaa-weather to verify NOAA station data for my weather variable and dates."
+
+policy:
+  allow_implicit_invocation: true

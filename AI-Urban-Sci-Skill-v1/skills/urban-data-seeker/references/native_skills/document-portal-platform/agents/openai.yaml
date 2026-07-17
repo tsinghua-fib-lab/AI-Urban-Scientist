@@ -1,0 +1,7 @@
+interface:
+  display_name: "Document Portals"
+  short_description: "Use official document portals"
+  default_prompt: "Use $document-portal-platform to route this urban data need to the right source or platform and list validation checks."
+
+policy:
+  allow_implicit_invocation: true

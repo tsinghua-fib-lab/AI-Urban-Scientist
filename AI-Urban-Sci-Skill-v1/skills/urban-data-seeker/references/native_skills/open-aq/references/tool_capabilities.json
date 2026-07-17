@@ -1,0 +1,81 @@
+{
+  "consumer_authority": "none",
+  "current_scripts": [
+    "check_open_aq_access.py",
+    "fetch_open_aq_sample.py",
+    "find_open_aq.py",
+    "probe_open_aq_api.py",
+    "validate_open_aq_result.py"
+  ],
+  "current_tool_types": [
+    "find",
+    "access_check",
+    "probe",
+    "fetch_sample",
+    "download_link",
+    "download",
+    "validate"
+  ],
+  "download_contract": {
+    "artifact_contract": {
+      "capped": "false for full fetch; true for sample fetch",
+      "download_mode": "sample or full",
+      "path": "local output artifact path",
+      "size_bytes": "written artifact size"
+    },
+    "default_behavior": "return_candidate_download_links_only",
+    "full_fetch": {
+      "download_mode": "full",
+      "policy_required": "fetch_full_allowed",
+      "scope": "complete_resource_when_source_access_and_terms_allow"
+    },
+    "sample_fetch": {
+      "download_mode": "sample",
+      "policy_required": "fetch_sample_allowed",
+      "scope": "capped_by_max_bytes_or_max_records"
+    },
+    "standard_args": [
+      "--policy",
+      "--url",
+      "--output-dir",
+      "--max-bytes",
+      "--max-records",
+      "--fixture-file",
+      "--fixture-response"
+    ]
+  },
+  "finality": "not_final",
+  "no_go": [
+    "Do not approve URLs, create resource plans, claim downloads, or claim verifier success.",
+    "Do not run full fetch from SourceSkill output alone."
+  ],
+  "policy": {
+    "default": "discovery_only",
+    "download": "fetch_full_allowed_requires_explicit_downstream_authorization",
+    "download_link": "discovery_only",
+    "fetch_full": "fetch_full_allowed_requires_explicit_downstream_authorization",
+    "fetch_sample": "fetch_sample_allowed",
+    "probe": "probe_allowed",
+    "validate": "validate_allowed"
+  },
+  "recommended_tools": [],
+  "review_status": {
+    "notes": "Official OpenAQ v3 documentation reviewed; programmatic access requires a registered API key in the X-API-Key header, and large-scale archive access should use sanctioned Open Data on AWS paths.",
+    "official_docs_checked": [
+      "https://docs.openaq.org/",
+      "https://docs.openaq.org/using-the-api/api-key",
+      "https://docs.openaq.org/about/terms"
+    ],
+    "web_reviewed": true
+  },
+  "schema": "open_data_source_skill_tool_capabilities.v1",
+  "source_access": {
+    "access_status": "key_gated",
+    "api_status": "public_api_requires_key",
+    "authorization_required": true,
+    "not_open_download": false,
+    "platform_tools_used": []
+  },
+  "source_card_id": "open_aq",
+  "source_skill_id": "open_aq"
+}

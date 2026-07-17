@@ -1,0 +1,7 @@
+interface:
+  display_name: "U.S. Census TIGER/Line Boundaries"
+  short_description: "TIGER/Line and cartographic boundary files"
+  default_prompt: "Use $us-tiger-boundaries to find the right Census boundary file for my geography."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,15 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use ArcGIS Hub and ArcGIS REST mechanics for FeatureServer, MapServer, layers, fields, extents, query endpoints, export links, and geospatial open-data services. Use when a URL or metadata explicitly indicates ArcGIS, or when a selected source requires ArcGIS platform probing after source suitability has been decided.",
+  "platform_fingerprints": [
+    "ArcGIS Hub",
+    "FeatureServer",
+    "MapServer",
+    "services.arcgis.com",
+    "arcgis/rest/services"
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "arcgis-platform",
+  "skill_type": "platform"
+}

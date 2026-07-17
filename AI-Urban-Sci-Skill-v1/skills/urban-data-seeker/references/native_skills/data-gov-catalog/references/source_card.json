@@ -1,0 +1,64 @@
+{
+  "schema": "open_data_source_card.v1",
+  "source_id": "data_gov_ckan_catalog",
+  "source_skill_id": "data_gov_catalog",
+  "display_name": "Data.gov Catalog",
+  "publisher": "U.S. General Services Administration",
+  "source_family": "data_gov_ckan_catalog",
+  "supported_domains": [
+    "government data",
+    "catalog"
+  ],
+  "scope": "US",
+  "category": "government data/catalog",
+  "platform_role": "data_catalog",
+  "source_type": "dataset_search_catalog",
+  "api_status": "public_api",
+  "access_status": "open",
+  "landing_url": "https://data.gov/",
+  "documentation_url": "https://catalog.data.gov/dataset/data-gov-ckan-api",
+  "api_base_url": "https://catalog.data.gov/api/3/action/package_search",
+  "access_method": "ckan_catalog_source_hint",
+  "required_params": [
+    "query",
+    "geography"
+  ],
+  "authorization_required": false,
+  "authorization_param": "authorization",
+  "not_open_download": false,
+  "platform_tools_used": [
+    "ckan_platform"
+  ],
+  "default_executability_hint": "resolvable_resource",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "needs_follow_up": false,
+  "follow_up_reason": "metadata_validation_required",
+  "route_description": "U.S. federal open-data catalog leads; resource files still need source-specific validation.",
+  "positive_evidence": "Need matched Data.gov Catalog source family or catalog scope.",
+  "ambiguities": [
+    "Dataset identity, exact variable/product/file, geography, and time coverage require downstream validation.",
+    "Access terms and license must be checked before acquisition."
+  ],
+  "requestability_conditions": [
+    "Use only under downstream policy and source terms.",
+    "Do not fetch full data from this SourceSkill output alone."
+  ],
+  "validation_notes": [
+    "Confirm the source landing page, documentation, and publisher before downstream acquisition.",
+    "Validate requested geography, time range, variables, license, access limits, and provenance.",
+    "Keep this output as source-prior evidence only; downstream resolver, probe, acquisition, and verifier stages remain required.",
+    "Does not choose a CKAN resource or claim publisher fitness as final."
+  ],
+  "api_query_template": {
+    "url": "https://catalog.data.gov/api/3/action/package_search",
+    "query_params": {
+      "query": "{query}",
+      "geography": "{geography}",
+      "time_range": "{time_range}"
+    }
+  },
+  "probe_method": "METADATA_ONLY",
+  "probe_notes": "Probe official metadata or documentation first; do not acquire data from this source-prior hint alone."
+}

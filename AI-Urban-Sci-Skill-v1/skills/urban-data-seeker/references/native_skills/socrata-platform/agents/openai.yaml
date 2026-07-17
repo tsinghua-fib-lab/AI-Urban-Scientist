@@ -1,0 +1,7 @@
+interface:
+  display_name: "Socrata Platform"
+  short_description: "Use Socrata SODA APIs"
+  default_prompt: "Use $socrata-platform to route this urban data need to the right source or platform and list validation checks."
+
+policy:
+  allow_implicit_invocation: true

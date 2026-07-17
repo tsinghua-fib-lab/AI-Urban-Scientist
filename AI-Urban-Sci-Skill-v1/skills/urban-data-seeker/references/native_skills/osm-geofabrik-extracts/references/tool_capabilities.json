@@ -1,0 +1,71 @@
+{
+  "consumer_authority": "none",
+  "current_scripts": [
+    "check_osm_geofabrik_extracts_access.py",
+    "find_osm_geofabrik_extracts.py",
+    "resolve_geofabrik_region.py",
+    "probe_osm_geofabrik_extracts_metadata.py",
+    "fetch_osm_geofabrik_extracts_sample.py",
+    "validate_osm_geofabrik_extracts_result.py"
+  ],
+  "current_tool_types": [
+    "find",
+    "resolve",
+    "access_check",
+    "probe",
+    "fetch_sample",
+    "download_link",
+    "validate"
+  ],
+  "download_contract": {
+    "default_behavior": "return_candidate_download_links_only",
+    "full_fetch": {
+      "download_mode": "full",
+      "policy_required": "fetch_full_allowed",
+      "scope": "full fetch requires explicit user intent, source terms review, destination path, and credential/license checks when applicable"
+    },
+    "sample_fetch": {
+      "download_mode": "sample",
+      "policy_required": "fetch_sample_allowed",
+      "scope": "source-specific sample fetcher can write capped fixture or live samples when policy and live-fetch gate allow it"
+    }
+  },
+  "finality": "not_final",
+  "no_go": [
+    "Do not approve URLs, create final resource plans, claim downloads, or claim verifier success.",
+    "Do not run full fetch from SourceSkill output alone."
+  ],
+  "policy": {
+    "default": "discovery_only",
+    "download": "fetch_full_allowed_requires_explicit_downstream_authorization",
+    "download_link": "discovery_only",
+    "fetch_full": "fetch_full_allowed_requires_explicit_downstream_authorization",
+    "fetch_sample": "fetch_sample_allowed",
+    "probe": "probe_allowed",
+    "validate": "validate_allowed"
+  },
+  "recommended_tools": [
+    "source_specific_candidate_finder",
+    "policy_gated_probe",
+    "policy_gated_sample_fetch",
+    "validator"
+  ],
+  "review_status": {
+    "notes": "Upgraded from static source-prior package to source-specific candidate/probe/fetch/validate tooling based on official documentation.",
+    "official_docs_checked": [
+      "https://www.geofabrik.de/data/download.html",
+      "https://download.geofabrik.de/"
+    ],
+    "web_reviewed": true
+  },
+  "schema": "open_data_source_skill_tool_capabilities.v1",
+  "source_access": {
+    "access_status": "open",
+    "api_status": "bulk_download_only",
+    "authorization_required": false,
+    "not_open_download": false,
+    "platform_tools_used": []
+  },
+  "source_card_id": "osm_geofabrik_extracts_source",
+  "source_skill_id": "osm_geofabrik_extracts"
+}

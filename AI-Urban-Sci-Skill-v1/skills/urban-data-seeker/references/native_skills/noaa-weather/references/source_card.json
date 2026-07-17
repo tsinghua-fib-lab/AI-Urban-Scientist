@@ -1,0 +1,59 @@
+{
+  "source_id": "noaa_climate_weather",
+  "source_skill_id": "noaa_weather",
+  "access_status": "open_public_use_with_restricted_follow_up_available",
+  "api_status": "public_api_requires_token",
+  "authorization_required": true,
+  "not_open_download": false,
+  "title": "NOAA Climate and Weather Data",
+  "source_family": "weather_climate_station_observations",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "official_entrypoints": [
+    {
+      "label": "NOAA NCEI Climate Data Online search",
+      "url": "https://www.ncei.noaa.gov/cdo-web/search",
+      "publisher": "NOAA National Centers for Environmental Information"
+    },
+    {
+      "label": "NOAA NCEI access services",
+      "url": "https://www.ncei.noaa.gov/access",
+      "publisher": "NOAA National Centers for Environmental Information"
+    }
+  ],
+  "supported_inputs": {
+    "dataset": "NOAA dataset family such as daily-summaries or GHCN daily",
+    "station": "Optional station identifier",
+    "variables": "Weather variables such as PRCP, TMAX, TMIN",
+    "date_range": "Requested start and end dates"
+  },
+  "verification_hints": [
+    "Station identity, time range, and variable coverage must be validated downstream.",
+    "NOAA API/search entries are source-prior leads, not final evidence.",
+    "Access, rate limits, and required tokens must be handled by consuming tools.",
+    "Do not use this card as benchmark-case answer data."
+  ],
+  "migration_wave": "known_source_wave1",
+  "migration_status": "migrated_from_legacy_known_source",
+  "legacy_known_source_layers": ["noaa_cdo_daily_precipitation"],
+  "applies_if": {
+    "need_terms": ["NOAA", "NCEI", "daily summaries", "precipitation", "temperature", "weather station"],
+    "source_layers": ["noaa_cdo_daily_precipitation"]
+  },
+  "excludes_if": {
+    "need_terms": ["air quality", "land surface temperature", "indoor sensor", "traffic volume"]
+  },
+  "access_notes": [
+    "NOAA NCEI Data Access offers direct downloads and cloud-ready APIs for many data products.",
+    "NOAA Climate Data Online web services require an assigned token in the request header.",
+    "The current sample-fetch configuration uses a no-token National Weather Service-style JSON payload; CDO/NCEI full API access still needs explicit token support.",
+    "Legacy NOAA CDO known_source entries remain source-prior compatibility hints.",
+    "NOAA search/API entrypoints may require token, station, variable, and date validation."
+  ],
+  "future_verification_hints": [
+    "Confirm dataset id, station identity, variables, date coverage, units, and API access.",
+    "Route-agent consumers must run resolver/probe/download/verifier separately."
+  ],
+  "migration_note": "Legacy NOAA known-source entries should become SourceCard metadata and not-final scripts that surface station/time/variable ambiguity."
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Geofabrik OSM Extracts"
+  short_description: "Bulk regional OSM PBF and shapefile extracts"
+  default_prompt: "Use $osm-geofabrik-extracts to find the smallest OSM extract for my study area."
+
+policy:
+  allow_implicit_invocation: true

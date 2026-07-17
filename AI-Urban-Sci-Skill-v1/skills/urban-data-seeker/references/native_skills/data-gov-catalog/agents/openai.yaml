@@ -1,0 +1,7 @@
+interface:
+  display_name: "Data.gov Catalog"
+  short_description: "U.S. federal CKAN catalog search and resources"
+  default_prompt: "Use $data-gov-catalog to find and validate candidate Data.gov resources for my dataset need."
+
+policy:
+  allow_implicit_invocation: true

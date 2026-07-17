@@ -1,0 +1,16 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use Granicus Legistar portal mechanics for municipal legislation, ordinances, resolutions, agendas, meetings, votes, files, attachments, and legislative history. Use when a URL or source page is a Legistar portal, or after a Legistar source skill has selected a legislative record to probe.",
+  "platform_fingerprints": [
+    "Legistar",
+    "LegislationDetail",
+    "Calendar.aspx",
+    "Granicus",
+    "Matter",
+    "File ID"
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "legistar-platform",
+  "skill_type": "platform"
+}

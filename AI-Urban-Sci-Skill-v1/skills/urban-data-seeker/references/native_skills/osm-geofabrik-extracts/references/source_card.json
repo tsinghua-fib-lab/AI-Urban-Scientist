@@ -1,0 +1,59 @@
+{
+  "access_notes": [
+    "This initial source package exposes official entrypoints and conservative source-prior hints only."
+  ],
+  "access_status": "open",
+  "api_status": "bulk_download_only",
+  "applies_if": [
+    "Need asks for regional OSM extracts, PBF, shapefile, roads, POI, buildings, or land-use features."
+  ],
+  "authorization_required": false,
+  "consumer_authority": "none",
+  "default_access_method": "source_specific_api_or_direct_download",
+  "default_executability_hint": "resolvable_resource",
+  "excludes_if": [
+    "Need requires official government road, parcel, or facility records."
+  ],
+  "finality": "not_final",
+  "future_verification_hints": [],
+  "not_final": true,
+  "not_open_download": false,
+  "official_entrypoints": [
+    {
+      "label": "Geofabrik download server",
+      "publisher": "Geofabrik / OpenStreetMap",
+      "url": "https://download.geofabrik.de/"
+    },
+    {
+      "label": "Geofabrik region PBF",
+      "publisher": "Geofabrik / OpenStreetMap",
+      "url": "https://download.geofabrik.de/{region_path}-latest.osm.pbf"
+    },
+    {
+      "label": "Geofabrik region shapefile",
+      "publisher": "Geofabrik / OpenStreetMap",
+      "url": "https://download.geofabrik.de/{region_path}-latest-free.shp.zip"
+    }
+  ],
+  "platform_tools_used": [],
+  "publisher": "Geofabrik / OpenStreetMap",
+  "purpose": "Regional OpenStreetMap PBF and derived vector extracts from Geofabrik.",
+  "required_params": [
+    "geography",
+    "feature_type"
+  ],
+  "source_family": "openstreetmap_regional_extracts",
+  "source_id": "osm_geofabrik_extracts_source",
+  "source_prior_only": false,
+  "source_skill_id": "osm_geofabrik_extracts",
+  "supported_domains": [
+    "transportation",
+    "poi",
+    "buildings",
+    "land_use"
+  ],
+  "title": "OSM Geofabrik Extracts",
+  "verification_hints": [
+    "Validate region path, ODbL attribution, update date, file size, and whether personal metadata is excluded."
+  ]
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "OpenAQ"
+  short_description: "OpenAQ pollutant measurements and sensors"
+  default_prompt: "Use $open-aq to probe OpenAQ pollutant observations for my city and date range."
+
+policy:
+  allow_implicit_invocation: true

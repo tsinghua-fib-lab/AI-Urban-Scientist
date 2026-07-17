@@ -1,0 +1,65 @@
+{
+  "source_id": "nyc_tlc_trip_records",
+  "source_skill_id": "nyc_tlc",
+  "access_status": "open",
+  "api_status": "bulk_download_only",
+  "authorization_required": false,
+  "not_open_download": false,
+  "title": "NYC Taxi and Limousine Commission Trip Record Data",
+  "source_family": "municipal_transportation_trip_records",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "official_entrypoints": [
+    {
+      "label": "NYC TLC Trip Record Data landing page",
+      "url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+      "publisher": "New York City Taxi and Limousine Commission"
+    },
+    {
+      "label": "NYC Open Data TLC datasets",
+      "url": "https://data.cityofnewyork.us/browse?q=Taxi%20and%20Limousine%20Commission",
+      "publisher": "NYC Open Data"
+    }
+  ],
+  "known_resource_patterns": [
+    {
+      "pattern": "https://d37ci6vzurychx.cloudfront.net/trip-data/{vehicle_type}_tripdata_{year}-{month}.parquet",
+      "vehicle_types": ["yellow", "green", "fhv", "fhvhv"],
+      "note": "Pattern is a source-prior hint. A resolver and probe must verify that a concrete URL exists before any route-agent resource plan is built."
+    }
+  ],
+  "supported_inputs": {
+    "vehicle_type": ["yellow", "green", "fhv", "fhvhv"],
+    "year": "Four digit year",
+    "month": "Two digit month"
+  },
+  "verification_hints": [
+    "Resolve official landing page or CDN object independently.",
+    "Probe content type and byte availability before treating the file as downloadable.",
+    "Validate schema and requested temporal coverage after download.",
+    "Do not use this card as benchmark-case answer data."
+  ],
+  "migration_wave": "known_source_wave1",
+  "migration_status": "migrated_from_legacy_known_source",
+  "legacy_known_source_layers": ["nyc_tlc_trip_records"],
+  "applies_if": {
+    "geography": ["New York City"],
+    "need_terms": ["taxi", "tlc", "trip records", "yellow taxi", "green taxi", "fhv"],
+    "source_layers": ["nyc_tlc_trip_records"]
+  },
+  "excludes_if": {
+    "geography": ["outside New York City"],
+    "need_terms": ["public transit schedules", "bike share", "parcel land use"]
+  },
+  "access_notes": [
+    "NYC TLC publishes monthly trip records as public Parquet files and links NYC Open Data export options.",
+    "Legacy known_source compatibility remains source-prior only.",
+    "Monthly file patterns must be resolved and probed before route acceptance."
+  ],
+  "future_verification_hints": [
+    "Confirm vehicle type, year, month, schema, and taxi-zone support resources.",
+    "Route-agent consumers must run resolver/probe/download/verifier separately."
+  ],
+  "migration_note": "Legacy known_source entries for NYC TLC should become SourceCard metadata plus SourceSkill scripts that emit not-final route evidence."
+}

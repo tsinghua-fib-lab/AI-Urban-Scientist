@@ -1,0 +1,7 @@
+interface:
+  display_name: "WHO Global Health Observatory"
+  short_description: "WHO GHO health indicators and OData API"
+  default_prompt: "Use $who-gho to verify a WHO GHO indicator and OData query."
+
+policy:
+  allow_implicit_invocation: true

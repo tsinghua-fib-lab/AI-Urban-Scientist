@@ -1,0 +1,29 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use SDMX statistical API mechanics for dataflows, dimensions, series keys, and data-query templates. Use when a selected provider exposes SDMX REST patterns and the task requires metadata-driven metadata+query mechanics with minimal probes.",
+  "platform_fingerprints": [
+    "SDMX",
+    "dataflow",
+    "codelist",
+    "series key",
+    "dimensions"
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "sdmx-platform",
+  "skill_type": "platform",
+  "direct_eval_recommendation_template": {
+    "status": "API_PASS",
+    "api_url_template": "{base_url}/dataflow/{agency}/{dataflow}/latest",
+    "probe_method": "GET",
+    "expected_http_status": 200,
+    "expected_content_type": "SDMX structure XML/JSON or provider-specific SDMX metadata",
+    "access_boundary": "Open public SDMX metadata API. No key, token, registration, approval, or paid access is required.",
+    "notes": "For platform-only evaluation, return a verified dataflow/datastructure metadata API entry for the selected provider rather than inferring a provider-specific series key."
+  },
+  "default_public_example": {
+    "base_url": "https://sdmx.oecd.org/public/rest/v1",
+    "api_url": "https://sdmx.oecd.org/public/rest/v1/dataflow/all/all/latest",
+    "notes": "Bundled smoke-test example only; do not treat OECD as the intended provider unless selected by the request or route."
+  }
+}

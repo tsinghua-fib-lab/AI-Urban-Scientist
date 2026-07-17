@@ -1,0 +1,62 @@
+{
+  "schema": "open_data_source_card.v1",
+  "source_id": "nasa_earthdata_cmr_api",
+  "source_skill_id": "nasa_earthdata_cmr",
+  "display_name": "NASA Earthdata CMR",
+  "publisher": "NASA",
+  "source_family": "nasa_earthdata_cmr_api",
+  "supported_domains": [
+    "remote sensing",
+    "climate"
+  ],
+  "scope": "global",
+  "category": "remote sensing/climate",
+  "platform_role": "data_catalog",
+  "source_type": "remote_sensing_data",
+  "api_status": "public_api_requires_account_for_some_assets",
+  "access_status": "registration_required",
+  "landing_url": "https://www.earthdata.nasa.gov/",
+  "documentation_url": "https://cmr.earthdata.nasa.gov/search/site/docs/search/api",
+  "api_base_url": "https://cmr.earthdata.nasa.gov/search",
+  "access_method": "source_card_hint",
+  "required_params": [
+    "query"
+  ],
+  "authorization_required": true,
+  "authorization_param": "authorization",
+  "not_open_download": true,
+  "platform_tools_used": [],
+  "default_executability_hint": "needs_follow_up",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "needs_follow_up": true,
+  "follow_up_reason": "access_or_metadata_validation_required",
+  "route_description": "NASA Earthdata CMR collection/granule search leads for Earth observation products.",
+  "positive_evidence": "Need matched NASA Earthdata CMR source family or catalog scope.",
+  "ambiguities": [
+    "Dataset identity, exact variable/product/file, geography, and time coverage require downstream validation.",
+    "Access terms and license must be checked before acquisition."
+  ],
+  "requestability_conditions": [
+    "Use only under downstream policy and source terms.",
+    "Do not fetch full data from this SourceSkill output alone."
+  ],
+  "validation_notes": [
+    "Confirm the source landing page, documentation, and publisher before downstream acquisition.",
+    "Validate requested geography, time range, variables, license, access limits, and provenance.",
+    "Keep this output as source-prior evidence only; downstream resolver, probe, acquisition, and verifier stages remain required.",
+    "Does not bypass Earthdata Login, EULA, product version, or large-file policy.",
+    "Authorization-gated sources are not open-download candidates from SourceSkill output alone."
+  ],
+  "api_query_template": {
+    "url": "https://cmr.earthdata.nasa.gov/search",
+    "query_params": {
+      "query": "{query}",
+      "geography": "{geography}",
+      "time_range": "{time_range}"
+    }
+  },
+  "probe_method": "METADATA_ONLY",
+  "probe_notes": "Probe official metadata or documentation first; do not acquire data from this source-prior hint alone."
+}

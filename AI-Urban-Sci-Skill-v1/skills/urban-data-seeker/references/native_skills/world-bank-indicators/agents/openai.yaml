@@ -1,0 +1,7 @@
+interface:
+  display_name: "World Bank Indicators"
+  short_description: "World Bank country indicators and API"
+  default_prompt: "Use $world-bank-indicators to verify a World Bank indicator code and API query."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,20 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use OData REST mechanics for service roots, metadata documents, entity sets, selected fields, filters, pagination, and JSON payloads. Use when an official API explicitly exposes OData paths such as WHO GHO-style services, $metadata endpoints, or entity-set URLs.",
+  "platform_fingerprints": [
+    "OData",
+    "$metadata",
+    "$filter",
+    "$select",
+    "$top",
+    "$skip"
+  ],
+  "boundary_rules": [
+    "If a candidate service lacks OData fingerprints and instead exposes Socrata, CKAN, ArcGIS, or SDMX behavior, return RESOLVABLE_PASS with platform_mismatch evidence rather than AUTH_REQUIRED.",
+    "A failed $metadata probe on a non-OData source is not an authorization boundary."
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "odata-platform",
+  "skill_type": "platform"
+}

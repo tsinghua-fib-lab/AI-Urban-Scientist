@@ -1,0 +1,31 @@
+{
+  "source_id": "open_aq",
+  "source_skill_id": "open_aq",
+  "access_status": "key_gated",
+  "api_status": "public_api_requires_key",
+  "authorization_required": true,
+  "not_open_download": false,
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "purpose": "OpenAQ air-quality measurements and metadata for pollutant/location/time needs.",
+  "official_entrypoints": [
+    "https://api.openaq.org/v3/measurements",
+    "https://docs.openaq.org/"
+  ],
+  "applies_if": [
+    "Need asks for ambient pollutant measurements, monitoring locations, or OpenAQ API data."
+  ],
+  "excludes_if": [
+    "Need is EPA-only AirData, emissions inventory, weather, or model output."
+  ],
+  "access_notes": [
+    "OpenAQ v3 programmatic API requests require a registered API key sent in the X-API-Key header.",
+    "OpenAQ also documents a full data archive on the Open Data on AWS path; use only official APIs, export functions, or sanctioned archive access.",
+    "Concrete API requests require pollutant, location, and time-window validation.",
+    "Provider coverage and API paging must be checked downstream."
+  ],
+  "future_verification_hints": [
+    "Resolver should validate parameter names, location ids, time bounds, and paging before any acquisition."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use SpatioTemporal Asset Catalog mechanics for collection, item, asset, bbox, datetime, cloud-cover, platform, and product-level filtering. Use when a selected remote-sensing or geospatial source exposes a STAC catalog/API, or when a URL is explicitly STAC.",
+  "platform_fingerprints": [
+    "STAC",
+    "collections",
+    "items",
+    "assets",
+    "bbox",
+    "datetime"
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "stac-platform",
+  "skill_type": "platform"
+}

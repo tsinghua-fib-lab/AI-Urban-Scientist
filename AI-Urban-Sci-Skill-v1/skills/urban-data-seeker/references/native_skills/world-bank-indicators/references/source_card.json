@@ -1,0 +1,25 @@
+{
+  "access_status": "open",
+  "api_status": "public_api",
+  "authorization_param": "authorization",
+  "authorization_required": false,
+  "consumer_authority": "none",
+  "not_final": true,
+  "not_open_download": false,
+  "notes": [
+    "Validate indicator metadata, country code, time coverage, and paging downstream."
+  ],
+  "official_urls": [
+    "https://data.worldbank.org/",
+    "https://datahelpdesk.worldbank.org/knowledgebase/articles/889392"
+  ],
+  "platform_tools_used": [],
+  "programmatic_access": [
+    "World Bank Indicators API"
+  ],
+  "publisher": "World Bank",
+  "schema": "open_data_source_card.v1",
+  "source_id": "world_bank_indicators_api",
+  "source_prior_only": true,
+  "source_skill_id": "world_bank_indicators"
+}

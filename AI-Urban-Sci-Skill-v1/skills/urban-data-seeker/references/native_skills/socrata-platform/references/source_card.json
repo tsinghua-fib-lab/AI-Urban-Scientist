@@ -1,0 +1,26 @@
+{
+  "candidate_native_skills": [],
+  "description": "Use Socrata-powered open-data portal and SODA API mechanics for tabular city, county, state, or federal datasets. Use when a URL contains a Socrata domain or four-by-four view id, or when a selected source requires Socrata metadata, SoQL, pagination, export, or schema probing.",
+  "direct_url_template": "https://{domain}/resource/{view_id}.{format}?%24limit={limit}",
+  "default_public_example": {
+    "purpose": "Platform smoke test only when Chicago is named but no view ID or topic is supplied.",
+    "url": "https://data.cityofchicago.org/resource/ydr8-5enu.csv?%24limit=1",
+    "view_id": "ydr8-5enu"
+  },
+  "platform_fingerprints": [
+    "Socrata",
+    "SODA",
+    "SoQL",
+    "four-by-four view id",
+    "data.cityof"
+  ],
+  "access_boundary_rules": [
+    "Public Socrata datasets normally allow unauthenticated bounded reads and CSV/JSON/GeoJSON exports.",
+    "App tokens improve quota and should not be treated as mandatory unless the response explicitly reports a missing token/key.",
+    "A single 403 should be classified as WAF_OR_BROWSER_REQUIRED or provider blocking when there is no explicit credential error."
+  ],
+  "priority_rule": "exact source skill > explicit platform fingerprint > source/platform routing",
+  "schema": "native_meta_skill.source_card.v1",
+  "skill_id": "socrata-platform",
+  "skill_type": "platform"
+}

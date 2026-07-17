@@ -1,0 +1,7 @@
+interface:
+  display_name: "OECD Data Explorer"
+  short_description: "OECD SDMX indicators and regional statistics"
+  default_prompt: "Use $oecd-data to verify an OECD dataflow and query for my indicator."
+
+policy:
+  allow_implicit_invocation: true

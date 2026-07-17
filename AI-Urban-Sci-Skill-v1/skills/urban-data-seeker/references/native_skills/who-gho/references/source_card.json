@@ -1,0 +1,64 @@
+{
+  "schema": "open_data_source_card.v1",
+  "source_id": "who_gho_odata",
+  "source_skill_id": "who_gho",
+  "display_name": "WHO Global Health Observatory",
+  "publisher": "World Health Organization",
+  "source_family": "who_gho_odata",
+  "supported_domains": [
+    "health",
+    "global indicators"
+  ],
+  "scope": "global/country",
+  "category": "health/global indicators",
+  "platform_role": "official_statistics_portal",
+  "source_type": "official_global_indicator",
+  "api_status": "public_api",
+  "access_status": "open",
+  "landing_url": "https://www.who.int/data/gho",
+  "documentation_url": "https://www.who.int/data/gho/info/gho-odata-api",
+  "api_base_url": "https://ghoapi.azureedge.net/api",
+  "access_method": "odata_api_source_hint",
+  "required_params": [
+    "query",
+    "geography"
+  ],
+  "authorization_required": false,
+  "authorization_param": "authorization",
+  "not_open_download": false,
+  "platform_tools_used": [
+    "odata_platform"
+  ],
+  "default_executability_hint": "resolvable_resource",
+  "source_prior_only": true,
+  "not_final": true,
+  "consumer_authority": "none",
+  "needs_follow_up": false,
+  "follow_up_reason": "metadata_validation_required",
+  "route_description": "WHO GHO health indicator leads using the official OData API.",
+  "positive_evidence": "Need matched WHO Global Health Observatory source family or catalog scope.",
+  "ambiguities": [
+    "Dataset identity, exact variable/product/file, geography, and time coverage require downstream validation.",
+    "Access terms and license must be checked before acquisition."
+  ],
+  "requestability_conditions": [
+    "Use only under downstream policy and source terms.",
+    "Do not fetch full data from this SourceSkill output alone."
+  ],
+  "validation_notes": [
+    "Confirm the source landing page, documentation, and publisher before downstream acquisition.",
+    "Validate requested geography, time range, variables, license, access limits, and provenance.",
+    "Keep this output as source-prior evidence only; downstream resolver, probe, acquisition, and verifier stages remain required.",
+    "Does not choose WHO entity sets, filters, disaggregations, or units as final."
+  ],
+  "api_query_template": {
+    "url": "https://ghoapi.azureedge.net/api",
+    "query_params": {
+      "query": "{query}",
+      "geography": "{geography}",
+      "time_range": "{time_range}"
+    }
+  },
+  "probe_method": "METADATA_ONLY",
+  "probe_notes": "Probe official metadata or documentation first; do not acquire data from this source-prior hint alone."
+}
